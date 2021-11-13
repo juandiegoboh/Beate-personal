@@ -2,8 +2,9 @@
   "name": "beate_backend",
   "version": "0.1.0",
   "description": "Backend para el proyecto Beate",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -14,6 +15,7 @@
   "author": "Beate",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "mongoose": "^6.0.12"
   }
 }
