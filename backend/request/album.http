@@ -1,0 +1,32 @@
+
+###
+POST http://localhost:3000/album
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWEzZGFlZTg0Nzc3M2Q2M2UyOTdhMjMiLCJ1c2VybmFtZSI6InVzZXIxIiwiaXNBZG1pbiI6ZmFsc2UsImlhdCI6MTYzODIyMjc0M30.LOcryFh6txKfvrX89GWurEKIBX4t5C6XCNe9A0mmWmo
+
+  {
+   "artistName": "Arjona",
+   "name": "Media noche"
+  }
+
+###
+PUT  http://localhost:3000/album/addtrack/61a54bab92142026a59d3a66
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWEzZGFlZTg0Nzc3M2Q2M2UyOTdhMjMiLCJ1c2VybmFtZSI6InVzZXIxIiwiaXNBZG1pbiI6ZmFsc2UsImlhdCI6MTYzODIyMjc0M30.LOcryFh6txKfvrX89GWurEKIBX4t5C6XCNe9A0mmWmo
+
+  {
+   "idTrack": "61a53d49e4f8f8b846bdeed1"
+  }
+
+###
+PUT  http://localhost:3000/album/deletetrack/61a54bab92142026a59d3a66
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWEzZGFlZTg0Nzc3M2Q2M2UyOTdhMjMiLCJ1c2VybmFtZSI6InVzZXIxIiwiaXNBZG1pbiI6ZmFsc2UsImlhdCI6MTYzODIyMjc0M30.LOcryFh6txKfvrX89GWurEKIBX4t5C6XCNe9A0mmWmo
+
+  {
+   "idTrack": "61a53d49e4f8f8b846bdeed1"
+  }
+
+###
+GET http://localhost:3000/album/Media noche
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWEzZGFlZTg0Nzc3M2Q2M2UyOTdhMjMiLCJ1c2VybmFtZSI6InVzZXIxIiwiaXNBZG1pbiI6ZmFsc2UsImlhdCI6MTYzODIyMjc0M30.LOcryFh6txKfvrX89GWurEKIBX4t5C6XCNe9A0mmWmo

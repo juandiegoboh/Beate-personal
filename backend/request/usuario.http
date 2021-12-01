@@ -1,0 +1,69 @@
+###
+GET http://localhost:3000/user/user
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWEzZTVkZWUwMjNkMmY4OGQ4MmZjY2EiLCJ1c2VybmFtZSI6ImNyYW0iLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNjM4MTMxMTY2fQ.DzaHkECPlkKqTDoypAFrEPWo9Ao9Lmoy_s-x4trzMig
+
+###
+POST https://frozen-ocean-48761.herokuapp.com/register
+Content-Type: application/json
+
+  {
+   "username": "cram",
+   "email": "cram9709@beate.com",
+   "password": "12335",
+   "firstName": "Cristian",
+   "lastName": "rafael",
+   "photo": ""
+  }
+
+
+###
+PUT http://localhost:3000/user
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWEzZTVkZWUwMjNkMmY4OGQ4MmZjY2EiLCJ1c2VybmFtZSI6ImNyYW0iLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNjM4MTMxMTY2fQ.DzaHkECPlkKqTDoypAFrEPWo9Ao9Lmoy_s-x4trzMig
+Content-Type: application/json
+
+  {
+   "firstName": "juan4",
+   "lastName": "asss"
+
+   }
+
+
+###
+
+PUT http://localhost:3000/user/follow
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWEzZTVkZWUwMjNkMmY4OGQ4MmZjY2EiLCJ1c2VybmFtZSI6ImNyYW0iLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNjM4MTMyNjIxfQ.J9HAeXK6hWH8zK47sJhNKx1PYVChxAszCRMKNZBz5FI
+Content-Type: application/json
+
+  {
+   "_id": "61a3daee847773d63e297a23" 
+  }
+
+
+###
+PUT http://localhost:3000/user/deleteFollowing
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWEzZTVkZWUwMjNkMmY4OGQ4MmZjY2EiLCJ1c2VybmFtZSI6ImNyYW0iLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNjM4MTMyNjIxfQ.J9HAeXK6hWH8zK47sJhNKx1PYVChxAszCRMKNZBz5FI
+Content-Type: application/json
+
+  {
+   "_id": "61a3daee847773d63e297a23"
+  }
+
+###
+PUT http://localhost:3000/user/deleteFollowers
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWEzZGFlZTg0Nzc3M2Q2M2UyOTdhMjMiLCJ1c2VybmFtZSI6InVzZXIxIiwiaXNBZG1pbiI6ZmFsc2UsImlhdCI6MTYzODEzMzQwM30.eLMUvTlFX-YZOWt8qKjc6FrN6fwAbh0zZID3M_IooQY
+Content-Type: application/json
+
+  {
+   "_id": "61a3e5dee023d2f88d82fcca"
+  } 
+
+
+###
+POST http://localhost:3000/login
+Content-Type: application/json
+
+  {
+   "username": "user1",
+   "password": "12335"
+  }
+
