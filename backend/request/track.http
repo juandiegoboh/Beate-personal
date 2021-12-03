@@ -1,0 +1,37 @@
+###
+POST http://localhost:3000/tracks
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWEzZGFlZTg0Nzc3M2Q2M2UyOTdhMjMiLCJ1c2VybmFtZSI6InVzZXIxIiwiaXNBZG1pbiI6ZmFsc2UsImlhdCI6MTYzODIxODk5MH0.y8mDsFnjCeZ_5CpI-YyoF8XxAvsiOLC7Hpr5C9t9aSI
+Content-Type: application/json
+
+  {
+   "artistName": "juanda caribe",
+   "name": "el parquecito",
+   "fileUrl": "https://www.youtube.com/watch?v=MSdU_4Se26I",
+   "albumName": "nose"
+  }
+
+###
+GET http://localhost:3000/tracks/i
+
+###
+PUT http://localhost:3000/tracks/619eb4d3abdb69bb2ce99b55
+Content-Type: application/json
+
+  {
+   "artisName": "Ricardo Arjona",
+   "name": "Te quiero",
+   "fileUrl": "https://www.youtube.com/watch?v=wjmxG7Z9STk",
+   "albumName": "Media Noche"
+  }
+
+###
+DELETE  http://localhost:3000/tracks/619eb4d3abdb69bb2ce99b55
+
+
+POST http://localhost:3000/tracks/subir
+Content-Type: application/json
+
+  {
+   "artisName": "Juanda Caribe",
+   "name": "El parquecito",
+  }
