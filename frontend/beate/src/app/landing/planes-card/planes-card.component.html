@@ -1,0 +1,17 @@
+<div class="card h-100 shadow">
+    <div class="card-body">
+      <h5 class="card-title text-center">{{ name }}</h5>
+      <h2 class="card-title text-center fw-bolder">{{ price | currency }}</h2>
+      <hr />
+      <ul>
+        <li *ngFor="let feature of features">
+          <p class="card-text">{{feature}}</p>
+        </li>
+      </ul>
+    </div>
+    <div class="card-footer d-grid">
+      <button type="button" class="btn btn-secondary text-white">
+        Quiero este!
+      </button>
+    </div>
+</div>

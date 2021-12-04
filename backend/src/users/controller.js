@@ -52,7 +52,7 @@ exports.login = async (req, res) => {
                 _id,
                 username,
                 isAdmin
-            }, process.env.secret)
+            },  process.env.JSON_SECRET || 'ajduiheofanicn9eeodnisna8efoq9wjcioaei')
             res.json({ token })
         } else {
             res.status(401).json('no autorizado')
@@ -91,7 +91,7 @@ exports.create = async (req, res) => {
             _id,
             username,
             isAdmin
-        }, process.env.secret)
+        }, process.env.JSON_SECRET || 'ajduiheofanicn9eeodnisna8efoq9wjcioaei')
 
         res.json('Usuario registrado este es su token: ' + token)
 
