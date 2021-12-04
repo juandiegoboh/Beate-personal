@@ -1,4 +1,3 @@
-
 ###
 POST http://localhost:3000/album
 Content-Type: application/json
