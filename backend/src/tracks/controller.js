@@ -94,8 +94,3 @@ exports.deleteOne = async ({ params: _id }, res) => {
         res.status(400).json('Error');
     }
 }
-
-
-
-
-
