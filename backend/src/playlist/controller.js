@@ -51,3 +51,56 @@ exports.addTrack = async (req, res) => {
         res.json(error)
     }
 }
+
+exports.deleteTrack = async (req,res) => {
+    try {
+        try {
+            const { _id } = req.params;
+            const { idTrack } = req.body;
+            const playList = await PlayList.findByIdAndUpdate(_id, { $pull: { "songs": idTrack } });
+            if (playList){
+                console.log(playList);
+                res.status(200).json('Track eliminado');
+            }else{
+                console.log('no existe la playlist');
+            }
+        } catch (error) {
+            console.log(error);
+            res.json(error)
+        }
+    } catch (error) {
+        console.log(error);
+        res.json(error);
+    }
+}
+
+exports.update = async ({ params: _id, body }, res) => {
+    try {
+        const result = await PlayList.findByIdAndUpdate(_id, body);
+        console.log(result);
+        if (result) {
+            res.status(200).json(' PlayList actualizada')
+        } else {
+            res.status(400)
+        }
+    } catch (error) {
+        console.log(error);
+        res.status(400)
+
+    }
+}
+
+exports.deleteOne = async ({ params: _id }, res) => {
+    try {
+        const result = await PlayList.findByIdAndDelete(_id);
+        if (result) {
+            console.log(result);
+            res.status(200).json('PlayList eliminada');
+        } else {
+            res.status(400).json('No existe esta PlayList')
+        }
+    } catch (error) {
+        console.log('Error');
+        res.status(400).json('Error');
+    }
+}

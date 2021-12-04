@@ -1,0 +1,169 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="#">Beat-e</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#acerca-de">Acerca de</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#artistas">Artistas</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#disfruta">Disfruta</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#planes">Planes</a>
+        </li>
+      </ul>
+      <div>
+        <button class="btn btn-primary mx-1" type="submit">Login</button>
+        <button class="btn btn-secondary text-white" type="submit">
+          Registro
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div id="inicio" class="container">
+  <div class="row">
+    <div class="col d-flex align-items-center justify-content-center">
+      <div>
+        <p class="fw-normal">Escucha tus</p>
+        <h1 class="fw-bold">Artistas</h1>
+        <h1 class="fw-bold">Favoritos</h1>
+      </div>
+    </div>
+    <div class="col d-flex align-items-center justify-content-center">
+      <img src="../../../assets/landing/inicio.png" />
+    </div>
+  </div>
+</div>
+
+<div id="acerca-de" class="container-fluid bg-white">
+  <div class="container p-5">
+    <div class="row">
+      <div class="col d-flex align-items-center justify-content-center">
+        <div>
+          <p class="fw-normal text-secondary">Acerca de</p>
+          <h1 class="fw-bold">¿Que es Beat-e?</h1>
+          <p class="fw-light">
+            Beate es una plataforma online para subir o escuchar audios de todo
+            tipo. <br /><br /><span>Música, podcast, audio libros, etc.</span>>
+          </p>
+        </div>
+        <div class="col d-flex align-items-center justify-content-center">
+          <img src="../../../assets/landing/acerca.png" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="artistas" class="container-fluid bg-primary">
+    <div class="container p-5">
+      <div class="row">
+        <div class="col d-flex align-items-center justify-content-center">
+          <img src="../../../assets/landing/artistas.png" />
+        </div>
+        <div class="col d-flex align-items-center justify-content-center">
+          <div>
+            <p class="fw-normal text-white">Artitas</p>
+            <h1 class="fw-bold text-secondary">¿Tienes Talento?</h1>
+            <p class="fw-light text-white">
+              Este es un buen lugar para iniciarte, sube tus Covers o pistas
+              originales y compártelas con amigos o productores. <br /><br />
+              Nunca se sabe donde empiece tu carrera!!
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="disfruta" class="container-fluid">
+    <div class="container p-5">
+      <div class="row">
+        <div class="col d-flex align-items-center justify-content-center">
+          <div>
+            <p class="fw-normal">Disfruta</p>
+            <h1 class="fw-bold">Escuchando otros Artistas</h1>
+            <p class="fw-light">
+              Si eres amante de la música, estudiante o quieres descubrir nuevos
+              talentos. también puedes ser parte de la comunidad <b>Beate.</b>
+            </p>
+          </div>
+        </div>
+        <div class="col d-flex align-items-center justify-content-center">
+          <img src="../../../assets/landing/disfruta.png" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="planes" class="container-fluid bg-light p-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center">
+          <div>
+            <p class="fw-normal text-secondary">Planes</p>
+            <h1 class="fw-bold">Para todos...</h1>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div *ngFor="let plan of planes" class="col">
+              <app-planes-card
+                [name]="plan.name"
+                [price]="plan.price"
+                [features]="plan.features"
+              >
+              </app-planes-card>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid bg-primary">
+  <div class="container">
+    <footer class="py-3 my-4 text-white">
+      <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+        <li class="nav-item">
+          <a href="#inicio" class="nav-link text-white px-2">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a href="#acerca-de" class="nav-link text-white px-2">Acerca de</a>
+        </li>
+        <li class="nav-item">
+          <a href="#artistas" class="nav-link text-white px-2">Artistas</a>
+        </li>
+        <li class="nav-item">
+          <a href="#disfruta" class="nav-link text-white px-2">Disfruta</a>
+        </li>
+        <li class="nav-item">
+          <a href="#planes" class="nav-link text-white px-2">Planes</a>
+        </li>
+      </ul>
+      <p class="text-center text-secondary">
+        © 2021 Beate, Todos los derechos reservados
+      </p>
+    </footer>
+  </div>
+</div>

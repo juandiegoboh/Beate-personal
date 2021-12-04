@@ -1,0 +1,12 @@
+@import "../../../styles.scss";
+
+.navbar-light {
+  .navbar-nav {
+    .nav-link.active {
+      color: $secondary;
+    }
+    .nav-link:hover {
+      color: $secondary;
+    }
+  }
+}
