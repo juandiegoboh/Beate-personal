@@ -5,8 +5,8 @@ const express = require('express');
 const cors = require('cors')
 const expressJwt = require('express-jwt');
 const helmet = require('helmet');
-const { response } = require('express');
 const PORT = process.env.PORT || 3000;
+
 
 const app = express();
 app.use(express.json());
@@ -15,18 +15,14 @@ app.use(helmet());
 
 app.use(
     expressJwt({
-        secret: process.env.JSON_SECRET || 'ajduiheofanicn9eeodnisna8efoq9wjcioaei',
+        secret: process.env.secret,
         algorithms: ['HS256'],
         requestProperty: process.env.requestProperty
     }).unless({
-        path: ['/login', '/register', '/test']
+        path: ['/login', '/register']
     })
 );
 
-
-app.use('/test', (req, res)=> {
-    res.send("El servidor esta funcionando")
-})
 app.use('/register', require('./users/register'))
 app.use('/login', require('./users/login'));
 app.use('/user', require('./users'));

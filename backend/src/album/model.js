@@ -10,8 +10,15 @@ const albumSchema = new Schema(
       required: true,
     },
     coverUrl: {
+      type: String
+    },
+    tracks: {
       type: [Schema.ObjectId],
-      ref: "Track",
+      ref: "Track"
+    },
+    numreproductions: {
+      type: Number,
+      default: 0
     },
     releaseDate: {
       type: Date,
