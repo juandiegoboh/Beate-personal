@@ -1,0 +1,62 @@
+<div *ngIf="hasAccount" mat-dialog-content class="mat-typography">
+  <div class="signup-form">
+    <form action="" method="post" autocomplete="off">
+		<h2>Registro</h2>
+		<p>Por favor llena este formulario para registrarte</p>
+		<hr>
+    <div class="form-group">
+			<div class="input-group">
+				<div class="input-group-prepend">
+					<span class="input-group-text">
+						<span class="fa fa-user"></span>
+					</span>                    
+				</div>
+				<input type="text" class="form-control" name="username" placeholder="Nombre de Usuario" required>
+			</div>
+        </div>
+        <div class="form-group">
+			<div class="input-group">
+				<div class="input-group-prepend">
+					<span class="input-group-text">
+						<i class="fa fa-paper-plane"></i>
+					</span>                    
+				</div>
+				<input type="email" class="form-control" name="email" id="inputEmail" placeholder="Email" required> 
+        <div class="invalid-tooltip">Ingrese una dirección de correo válida.</div>
+			</div>
+        </div>
+		<div class="form-group">
+			<div class="input-group">
+				<div class="input-group-prepend">
+					<span class="input-group-text">
+						<i class="fa fa-lock"></i>
+					</span>                    
+				</div>
+				<input type="password" class="form-control" name="password" placeholder="Contraseña" required="required">
+			</div>
+        </div>
+		<div class="form-group">
+			<div class="input-group">
+				<div class="input-group-prepend">
+					<span class="input-group-text">
+						<i class="fa fa-lock"></i>
+						<i class="fa fa-check"></i>
+					</span>                    
+				</div>
+				<input type="password" class="form-control" name="confirm_password" placeholder="Confirmar Contraseña" required="required">
+			</div>
+        </div>
+        <div class="form-group">
+			<label class="form-check-label"><input type="checkbox" required="required"> Acepto los <a href="#">Terminos y Condiciones</a> &amp; <a href="#">Políticas de Privacidad</a></label>
+		</div>
+		<div class="form-group">
+            <button type="submit" class="btn btn-primary btn-lg">Sign Up</button>
+        </div>
+    </form>
+	<div class="text-center">Ya tienes una cuenta? <a href="#">Inicia sesión</a></div>
+  <!-- <div mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button mat-button mat-dialog-close="true" cdkFocusInitial>Install</button>
+  </div> -->
+</div>
+  </div>

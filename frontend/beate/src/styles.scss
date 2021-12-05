@@ -3,6 +3,9 @@
 $body-bg: #F4F5F8;
 $primary: #010D27;
 $secondary: #FF2454;
-$font-family-base: 'poppins';
+$font-family-base: 'Poppins', sans-serif;
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500;1,600&display=swap');
 @import "~bootstrap/scss/bootstrap";
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
