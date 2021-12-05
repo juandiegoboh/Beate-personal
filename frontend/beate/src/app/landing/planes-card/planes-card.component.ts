@@ -3,6 +3,7 @@ import { Component, Input } from '@angular/core';
 @Component({
   selector: 'app-planes-card',
   templateUrl: './planes-card.component.html',
+  styleUrls: ['./planes-card.component.scss']
 })
 export class PlanesCardComponent {
 

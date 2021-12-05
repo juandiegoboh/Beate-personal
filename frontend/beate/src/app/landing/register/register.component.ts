@@ -6,14 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./register.component.scss']
 })
 
-export class RegisterComponent implements OnInit {
-
-  hasAccount: boolean = true;
+export class RegisterComponent{
 
   constructor() { }
-
-  ngOnInit(): void {
-  }
 
 }
 

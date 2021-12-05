@@ -1,5 +1,6 @@
 import { Component, Inject } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { LoginService } from 'src/app/services/login.service';
 
 interface Planes {
   name: string;
@@ -13,7 +14,6 @@ interface Planes {
   styleUrls: ['./landing-page.component.scss'],
 })
 export class LandingPageComponent {
-
   planes: Planes[] = [
     {
       name: 'Gratis',
@@ -41,7 +41,11 @@ export class LandingPageComponent {
 
   openLogin() {
     RegisterComponent.prototype.hasAccount = true;
-    const dialogRef = this.dialog.open(RegisterComponent);
+    const dialogRef = this.dialog.open(RegisterComponent, {
+      width: 'auto',
+      height: 'auto',
+    });
+
     dialogRef.afterClosed().subscribe((result) => {
       console.log(result);
     });
@@ -49,7 +53,11 @@ export class LandingPageComponent {
 
   openRegister() {
     RegisterComponent.prototype.hasAccount = false;
-    const dialogRef = this.dialog.open(RegisterComponent);
+    const dialogRef = this.dialog.open(RegisterComponent, {
+      width: 'auto',
+      height: 'auto',
+    });
+
     dialogRef.afterClosed().subscribe((result) => {
       console.log(result);
     });
@@ -62,7 +70,57 @@ export class LandingPageComponent {
   templateUrl: '../register/register.component.html',
   styleUrls: ['../register/register.component.scss'],
 })
-
 export class RegisterComponent {
-  hasAccount: boolean = true; 
+  hasAccount: unknown;
+
+  username: any;
+  password: any;
+  password2: any;
+  email: any;
+
+  // constructor(public dialog: MatDialog, private _login: LoginService) {
+  //   super(dialog);
+  // }
+
+  constructor(private _login: LoginService) { }
+
+  changeLogin() {
+    this.username = "";
+    this.password = "";
+    this.hasAccount = true;
+  }
+
+  login() {
+    let infoUsuario = {
+      username: this.username,
+      password: this.password,
+    };
+    this._login.login(infoUsuario).subscribe((data) => {
+      console.log(data);
+    });
+  }
+
+  register() {
+
+    if(this.password != this.password2){
+      alert("Las contraseñas no coinciden");
+
+      this.password = "";
+      this.password2 = "";
+      return;
+    }
+
+    let infoUsuario = {
+      username: this.username,
+      password: this.password,
+      email: this.email,
+    };
+    this._login.register(infoUsuario).subscribe((data) => {
+      console.log(data);
+      this.username = "";
+      this.email = "";
+      this.password = "";
+      this.password2 = "";
+    });
+  }
 }

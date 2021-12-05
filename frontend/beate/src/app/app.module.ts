@@ -8,6 +8,8 @@ import { LandingModule } from './landing/landing.module';
 import { MusicModule } from './music/music.module';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
+import { AppRoutingModule } from './app-routing.module';
+import { ProfilesModule } from './profiles/profiles.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { CommonModule } from '@angular/common';
     HttpClientModule,
     FormsModule,
     LandingModule,
-    MusicModule
+    ProfilesModule,
+    MusicModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent],

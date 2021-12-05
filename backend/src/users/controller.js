@@ -74,7 +74,7 @@ exports.create = async (req, res) => {
             lastName,
             photo
         } = req.body;
-        const newUser = new User({
+        const newUser = await new User({
             username,
             email,
             password: bcrypt.hashSync(password, parseInt(process.env.crypt)),
