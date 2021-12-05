@@ -3,10 +3,10 @@ const router = express.Router();
 
 const { get, create, deleteOne, update, uploadTrack } = require('./controller')
 
-router.get('/:input', get);
-router.post('/', create);
-router.post('/subir', uploadTrack);
-router.put('/:_id', update);
-router.delete('/:_id', deleteOne);
+router.get('/tracks/:input', get);
+router.post('/tracks', create);
+router.post('/tracks/subir', uploadTrack);
+router.put('/tracks/:_id', update);
+router.delete('/tracks/:_id', deleteOne);
 
 module.exports = router;

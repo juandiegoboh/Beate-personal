@@ -52,10 +52,10 @@ exports.login = async (req, res) => {
                 _id,
                 username,
                 isAdmin
-            }, process.env.secret)
+            }, process.env.JSON_SECRET)
             res.json({ token })
         } else {
-            res.status(401).json('no autorizado')
+            res.status(401).json('No autorizado')
         }
     } catch (error) {
         res.status(400).json(error)
@@ -84,14 +84,13 @@ exports.create = async (req, res) => {
         });
         const { _id, isAdmin } = await newUser.save();
 
-
         //Generar token de acceso
 
         const token = JWT.sign({
             _id,
             username,
             isAdmin
-        }, process.env.secret)
+        }, process.env.JSON_SECRET)
 
         res.json('Usuario registrado este es su token: ' + token)
 
@@ -121,9 +120,10 @@ exports.uploadPhoto = async (req, res) => {
 
 exports.update = async (req, res) => {
     try {
-        const { _id } = req.auth;
+        const { _id } = req.body;
         const { firstName, lastName } = req.body
-        const user = await User.findByIdAndUpdate(_id, { firstName, lastName });
+        // const user = await User.findByIdAndUpdate(_id, { firstName, lastName });
+        const user = await User.findByIdAndUpdate(_id, req.body);
         console.log(user);
         res.status(200).json('Actualizado')
     } catch (error) {

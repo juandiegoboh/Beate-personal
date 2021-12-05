@@ -3,11 +3,11 @@ const router = express.Router();
 
 const { create, addFollowers, deleteFollowing, deleteFollowers, update, getUsername, getName } = require('./controller');
 
-router.get('/:input', getUsername);
-router.get('/:input', getName);
-router.post('/', create);
-router.put('/', update);
-router.put('/follow', addFollowers);
-router.put('/deleteFollowing/', deleteFollowing);
-router.put('/deleteFollowers/', deleteFollowers);
+router.get('/users/:input', getUsername);
+router.get('/users/:input', getName);
+router.post('/users', create);
+router.put('/users', update);
+router.put('/users/follow', addFollowers);
+router.put('/users/deleteFollowing', deleteFollowing);
+router.put('/users/deleteFollowers', deleteFollowers);
 module.exports = router;

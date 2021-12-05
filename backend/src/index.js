@@ -13,22 +13,22 @@ app.use(express.json());
 app.use(cors());
 app.use(helmet());
 
-app.use(
-    expressJwt({
-        secret: process.env.secret,
-        algorithms: ['HS256'],
-        requestProperty: process.env.requestProperty
-    }).unless({
-        path: ['/login', '/register']
-    })
-);
+// app.use(
+//     expressJwt({
+//         secret: process.env.JSON_SECRET,
+//         algorithms: ['HS256'],
+//         requestProperty: process.env.requestProperty
+//     }).unless({
+//         path: ['/api/login', '/api/register']
+//     })
+// );
 
-app.use('/register', require('./users/register'))
-app.use('/login', require('./users/login'));
-app.use('/user', require('./users'));
-app.use('/tracks', require('./tracks'));
-app.use('/album', require('./album'));
-app.use('/playlist', require('./playlist'));
+app.use('/api/register', require('./users/register'))
+app.use('/api/login', require('./users/login'));
+app.use('/api', require('./users'));
+app.use('/api', require('./tracks'));
+app.use('/api', require('./album'));
+app.use('/api', require('./playlist'));
 
 app.listen(PORT, () => {
     console.log("Corriento puerto " + PORT);
